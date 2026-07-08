@@ -27,9 +27,9 @@ def test_cgm_data_entry_boundary_limits(page: Page):
     print(f"\n[QA Log] System UI captured input value: {current_value}")
     assert current_value == invalid_glucose_input or current_value == ""
 
-# Test Case 3: Visual Element and Context State Verification
+# Test Case 3: Visual Element and Context State Verification (Fixed Locator)
 def test_dashboard_ui_responsiveness(page: Page):
     page.goto("https://the-internet.herokuapp.com/dynamic_content")
     
-    # Verify core dashboard visual frame elements are visible and loading consistently
-    expect(page.locator("#content")).to_be_visible()
+    # Fix: Pinpoint the layout container specifically using a CSS hierarchy to avoid ambiguity
+    expect(page.locator(".example #content")).to_be_visible()
