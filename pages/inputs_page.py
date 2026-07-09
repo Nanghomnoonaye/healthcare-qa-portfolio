@@ -22,6 +22,12 @@ class InputsPage(BasePage):
         self.number_input.fill(str(value))
         return self
 
+    def type_value(self, text: str) -> "InputsPage":
+        """Type raw keystrokes (used to test rejection of non-numeric input)."""
+        self.number_input.click()
+        self.number_input.press_sequentially(str(text))
+        return self
+
     def press_up_arrow(self, times: int = 1) -> "InputsPage":
         for _ in range(times):
             self.number_input.press("ArrowUp")
