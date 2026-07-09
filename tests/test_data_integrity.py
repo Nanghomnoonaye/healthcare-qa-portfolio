@@ -55,7 +55,7 @@ def test_arrow_up_increments_existing_value(inputs_page):
 @pytest.mark.data_integrity
 def test_non_numeric_characters_are_not_stored(inputs_page):
     """A number field must not retain alphabetic input."""
-    inputs_page.enter_value("abc")
+    inputs_page.type_value("abc")
     assert inputs_page.current_value == "", (
         "A type=number field should reject non-numeric characters."
     )
