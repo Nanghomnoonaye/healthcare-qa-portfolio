@@ -1,14 +1,14 @@
-# Healthcare QA Automation Suite
+# Healthcare & Fintech UI QA Automation Suite
 
-A robust, automated end-to-end (E2E) testing framework built with **Python**, **Playwright**, and **Pytest**. This suite simulates real-world clinical workflows and critical data integrity checks to demonstrate enterprise-grade quality assurance practices in the healthcare technology domain.
+A robust, automated end-to-end (E2E) testing framework built with **Python**, **Playwright**, and **Pytest**. This suite simulates real-world clinical and fintech workflows, implementing strict edge-case validation and resolving strict-mode visual regressions to demonstrate production-grade quality assurance.
 
 ---
 
 ## 🧪 Core Test Scenarios Covered
 
-* **Clinical Portal Authentication:** Validates secure session initiation, user boundary limits, and successful landing on encrypted medical dashboards.
-* **Continuous Glucose Monitor (CGM) Data Integrity:** Implements boundary value analysis (BVA) on number fields to ensure the UI layer successfully intercepts or flags invalid negative clinical data inputs (preventing dangerous calculation errors).
-* **UI Responsiveness & Layout Stability:** Verifies core diagnostic visual frames render consistently without strict-mode locator ambiguities.
+* **Secure Portal Authentication:** Validates session initiation, secure boundaries, and successful landing on encrypted medical/financial dashboards.
+* **Data Integrity & Boundary Value Analysis (BVA):** Implements BVA on numeric form fields (e.g., medical device/CGM data logs) to guarantee that the UI layer correctly catches or flags invalid negative values before data processing.
+* **Layout Stability & Locator Ambiguity Fixes:** Targets dynamic, fast-moving layouts by utilizing explicit CSS hierarchy constraints (`.example #content`) to eliminate strict-mode locator conflicts and ensure reliable, visual-ready rendering.
 
 ---
 
@@ -17,7 +17,7 @@ A robust, automated end-to-end (E2E) testing framework built with **Python**, **
 * **Language:** Python 3.9+
 * **Automation Engine:** Playwright (Chromium)
 * **Test Runner:** Pytest
-* **Design Paradigm:** Core Functional Verification & Hierarchy-Based Locators
+* **Design Paradigm:** Hierarchy-Based Locators & Functional Boundary Testing
 
 ---
 
