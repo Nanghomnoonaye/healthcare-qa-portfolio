@@ -1,0 +1,53 @@
+openapi: 3.0.3
+info:
+  title: CGM Readings API (sample)
+  version: "1.0"
+paths:
+  /readings:
+    post:
+      summary: Submit a glucose reading
+      operationId: submitReading
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [patient_id, value_mgdl, recorded_at]
+              properties:
+                patient_id:
+                  type: string
+                value_mgdl:
+                  type: number
+                  minimum: 20
+                  maximum: 600
+                recorded_at:
+                  type: string
+                  format: date-time
+      responses:
+        "201":
+          description: Reading accepted
+        "400":
+          description: Validation error
+  /readings/{patient_id}:
+    get:
+      summary: List recent readings for a patient
+      operationId: listReadings
+      parameters:
+        - name: patient_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: limit
+          in: query
+          required: false
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+      responses:
+        "200":
+          description: List of readings
+        "404":
+          description: Patient not found
